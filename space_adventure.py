@@ -116,6 +116,34 @@ def prepare():
 def find_item():
     pass
 
+def vent_space():
+    print("\nYou manage to get into the vent space. You hear sounds in the room above, but can't see anything...")
+    time.sleep(3)
+    print("It's dark...")
+    time.sleep(3)
+    print("Dusty...")
+    time.sleep(3)
+    print("And cold down here.")
+    print("Should you stay and wait, or try to move on?")
+    print("1. Stay still and wait out whatever is making noise.")
+    print("2. Move down the vent path.")
+
+    choice = input("What will you do? (1/2): ")
+
+    if choice == "1":
+        dead("You try to remain still...\n" \
+        "waiting...\n" \
+        "you feel air on your neck?...\n" \
+        "No, not air... You feel death...")
+    elif choice == "2":
+        dead("\nYou move along the vent tunnels, still hearing the sound in the room you left.\n" \
+        "maybe you're safe...\n You turn the corner... WHAT IS Tha-")
+    else:
+        print("Invalid Choice")
+        vent_space()
+
+
+
 def dead(reason="You died!"):
     print(f"\n{reason}")
     time.sleep(2)
