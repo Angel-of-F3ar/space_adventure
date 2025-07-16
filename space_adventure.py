@@ -1,6 +1,7 @@
 import time
 from escape_pod import escape_pod
 from control_room import control_room
+from engine_bay import engine_bay
 
 def intro():
     print("You wake up on a dark, cold spaceship. Lights flicker around you.")

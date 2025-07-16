@@ -1,6 +1,8 @@
 import time
 from game_tools import dead
+from engine_bay import engine_bay
 from escape_pod import escape_pod
+from captains_quarters import captains_quarters
 
 def control_room():
     print("\nYou stumble into the control room... it's eerily quiet.")

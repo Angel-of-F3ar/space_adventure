@@ -1,7 +1,7 @@
 import time
 from game_tools import dead
 from control_room import control_room
-# from engine_bay import engine_bay
+from engine_bay import engine_bay
 
 def escape_pod():
     print("\nYou approach the escape pod. The door hisses open.")
