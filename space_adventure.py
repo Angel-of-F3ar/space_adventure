@@ -111,7 +111,36 @@ def look_to_hide():
         look_to_hide()
 
 def prepare():
-    pass
+    print("\nYou're scared but something in you is telling you to defend yourself.")
+    print("You look around hastily... fumbling through drawers and junk.")
+    time.sleep(5)
+    print("SKREEEEEE")
+    print("\nWHAT WAS THAT?!")
+    time.sleep(3)
+    print("You're heart is beating so fast you feel like its going to pop out!")
+    time.sleep(3)
+    print("SKREEEEEE")
+    time.sleep(1.5)
+    print("It was louder, closer...")
+    time.sleep(2)
+    print("You see an emergency ax on the ground.")
+    time.sleep(1)
+    print("1. Grab it!")
+    time.sleep(3)
+    print("2. Why would you look for another option. GRAB IT!")
+
+    choice = input("What will you do? (1/2): ")
+
+    if choice == "1":
+        dead("You try to grab it!... but due to how fast your heart was racing you failed to notice how clammy your hands got...\n" \
+        "It sleps-\n" \
+        "SKREEEEEE-")
+    elif choice == "2":
+        dead("Due to you indecisiveness, well... we all know what happens here. Trust your gut next time.")
+    else:
+        print("Invalid Choice.")
+        prepare()
+
 
 def find_item():
     pass
