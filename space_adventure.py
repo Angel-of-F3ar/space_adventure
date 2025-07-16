@@ -175,7 +175,70 @@ def find_item():
         find_item()
 
 def inspect_pod():
-    pass
+    print("\nYou’ve managed to dislodge the item. You begin to open the pod when it... squeaks.")
+    print("You immediately freeze.")
+    time.sleep(5)
+    print("SKREEEEEEEE")
+    time.sleep(5)
+    print("You wonder what that could be — oddly, you're still calm.")
+    time.sleep(3)
+    print("SKREEEEEEEE...")
+    time.sleep(3)
+    print("It’s getting louder. You have to decide:")
+    print("1. Hide inside the pod")
+    print("2. Find somewhere else to hide")
+
+    choice = input("What do you do? (1/2): ")
+
+    if choice == "1":
+        enter_pod()
+    elif choice == "2":
+        look_to_hide()
+    else:
+        print("Invalid Choice.")
+        inspect_pod()
+
+
+def enter_pod():
+    print("\nYou manage to enter the pod and close the door... Wait...")
+    time.sleep(5)
+    print("It won't latch...")
+    time.sleep(5)
+    print("You start to hear noises outside the pod, in the room.")
+    time.sleep(6)
+    print("That calmness you had...")
+    time.sleep(6)
+    print("Is fading...")
+    time.sleep(6)
+    print("Heart racing...")
+    time.sleep(6)
+    print("1. Wait it out as long as you can?")
+    print("2. Make a run for it?")
+    time.sleep(3)
+    print("tick tock...")
+    time.sleep(4)
+    print("tick tock...")
+    time.sleep(4)
+
+    choice = input("What do you do? (1/2): ")
+
+    if choice == "1":
+        print("\nYou thought you would be safe...")
+        time.sleep(3)
+        print("The door rips off the hinges, metal screams, and your eyes meet—")
+        time.sleep(3)
+        dead("IS THA—\n\nDid you choose the right starting route?\nChoices have consequences...")
+    elif choice == "2":
+        print("\nYou hesitate...")
+        time.sleep(2)
+        print("Noises getting louder...")
+        time.sleep(2)
+        dead("SKREEE—")
+    else:
+        print("Invalid Choice.")
+        enter_pod()
+
+
 
 
 def vent_space():
