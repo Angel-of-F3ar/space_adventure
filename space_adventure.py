@@ -1,3 +1,5 @@
+import time
+
 def intro():
     print("You wake up on a dark, cold spaceship. Lights flicker around you.")
     print("You have three choices:")
@@ -47,9 +49,13 @@ def escape_pod():
 
 def force_open():
     print("\nAs you force the door open to the pod you wind up breaking part of the hinge creating a loud noise!")
+    time.sleep(1.5)
     print("BANG!")
+    time.sleep(1.5)
     print("You hear an eerie cry coming from somewhere in the ship . Your heart rate shoots up.")
-    print("You broke the pod door so you dont have time to fix it.")
+    time.sleep(2)
+    print("You broke the pod door - there's no time to fix it.")
+    time.sleep(1)
     print("1. Do you try to hide?")
     print("2. Do you look for something to defend youself with?")
 
