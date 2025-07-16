@@ -84,6 +84,29 @@ def peek_in():
         print("Invalid Choice.")
         peek_in()
 
+def look_to_hide():
+    print("\nYou're heart is racing as you look for a place to hide.")
+    time.sleep(2)
+    print("The noises are getting louder, whatever is out there is getting closer.")
+    time.sleep(2)
+    print("You need to find somewher to hide, the noise is getting louder.")
+    time.sleep(1)
+    print("1. You see a vent on the floor. Hide in it?")
+    print("2. You can hide under the desk. Hide in it?")
+    print("3. You see a closet you could hide in. Hide in it?")
+
+    choice = input("Where will you hide? (1/2/3): ")
+
+    if choice == "1":
+        vent_space()
+    elif choice == "2":
+        dead()
+    elif choice == "3":
+        dead()
+    else:
+        print("Invalid Choice.")
+        look_to_hide()
+
 #Start the game
 if __name__ == "__main__":
     intro()
