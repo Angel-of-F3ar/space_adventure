@@ -1,5 +1,6 @@
 import time
 from game_tools import dead
+from escape_pod import escape_pod
 
 def control_room():
     print("\nYou stumble into the control room... it's eerily quiet.")
@@ -59,7 +60,120 @@ def call_out():
 
 
 def walk_over():
+    print("\nYou take in the state of the room, wondering why the Captain hasn’t moved.")
+    time.sleep(3)
+    print('You whisper, "Captain Dairus?"...')
+    time.sleep(6)
+    print("Wait — why did you whisper?")
+    time.sleep(5)
+    print("Something inside you feels wrong. You instinctively knew not to make noise.")
+    time.sleep(6)
+    print("Slowly, you walk over to the chair...")
+    time.sleep(5)
+    print("There’s no Captain.")
+    time.sleep(2)
+    print("There’s half of one.")
+    time.sleep(3)
+    print("The entire lower half is gone.")
+    time.sleep(2)
+    print("The uniform is shredded. The upper half slumps forward — lifeless.")
+    time.sleep(4)
+    print("You stumble back, mouth open, but no sound comes out.")
+    time.sleep(5)
+    print("1. Take a moment to examine what’s left of the Captain.")
+    print("2. Run out screaming.")
+    print("3. Hurry to the escape pod.")
+
+    choice = input("What will you do? (1/2/3): ")
+
+    if choice == "1":
+        examine()
+    elif choice == "2":
+        run_out()
+    elif choice == "3":
+        escape_pod()
+    else:
+        print("Invalid choice.")
+        walk_over()
+
+
+def run_out():
+    print("\nYou turn and bolt out of the control room — panic drowning all sense of reason.")
+    time.sleep(3)
+    print("You crash into a console, knocking it over. A metal tray clatters across the floor.")
+    time.sleep(4)
+    print("Heart racing. Breathing erratic. You don't even know where you're running.")
+    time.sleep(4)
+    print("What happened to the Captain?")
+    time.sleep(2)
+    print("What is going on?!")
+    time.sleep(3)
+    print("You hear it.")
+    print("Somewhere behind you.")
+    time.sleep(2)
+    print("What is that sound?")
+    time.sleep(2)
+    print("You keep running — past flickering lights, overturned crates, leaking vents.")
+    time.sleep(4)
+    print("You think of the escape pod.")
+    time.sleep(2)
+    print("But instinct? Gone.")
+    time.sleep(2)
+    print("Calm? Gone.")
+    time.sleep(2)
+    print("You've made too much noise.")
+    time.sleep(3)
+    print("Something is coming.")
+    time.sleep(2)
+    print("You try to go faster — but the hallway begins to spin...")
+    time.sleep(4)
+    print("Why does it feel like you're falling?")
+    time.sleep(3)
+    print("Wait...")
+    print("Why are you seeing the hallway from the floor?")
+    time.sleep(4)
+    print("Your body collapses just ahead of you.")
+    time.sleep(3)
+    print("Everything goes black.")
+    time.sleep(3)
+    dead()
+
+
+def examine():
+    print("\nSomething tells you to remain calm and figure out what’s going on.")
+    print("For the first time since waking up, your mind feels... clear.")
+    time.sleep(3)
+    print("You lean over the Captain’s body.")
+    time.sleep(7)
+    print("You find nothing...")
+    time.sleep(5)
+    print("Is that doubt creeping in?")
+    time.sleep(5)
+    print("Then you notice — the Captain is holding something.")
+    time.sleep(6)
+    print('"Cheryl2042"...')
+    time.sleep(6)
+    print("Who is Cheryl?")
+    time.sleep(2)
+    print("1. Why does that matter? Toss the paper and go to the escape pod.")
+    print("2. Take a moment to think about this logically.")
+    print("3. Toss the paper and head to the engine bay.")
+
+    choice = input("What will you do? (1/2/3): ")
+
+    if choice == "1":
+        escape_pod()
+    elif choice == "2":
+        take_time()
+    elif choice == "3":
+        engine_bay()
+    else:
+        print("Invalid choice.")
+        examine()
+
+def take_time():
     pass
+
 
 def scramble():
     print("\nYou're scared, but something in you is screaming — fight back.")
