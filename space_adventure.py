@@ -143,7 +143,40 @@ def prepare():
 
 
 def find_item():
+    print("\nYou start to think of how you can dislodge whatever is holding the door.")
+    print("For some reason... you're calm?")
+    time.sleep(3)
+    print("You start to wonder...")
+    time.sleep(2)
+    print("Why am I calm?")
+    time.sleep(5)
+    print("Wait — where is everyone?")
+    time.sleep(1)
+    print("Is this why I'm so calm?...")
+    time.sleep(5)
+    print("For now, you focus on the problem at hand. You look around.")
+    time.sleep(3)
+    print("You see a metal pole nearby — could be just right.")
+    print("You grab it, and try...")
+    print("1. Carefully dislodge the item and open the escape pod.")
+    print("2. Call out first... then try, banging the pole in the process.")
+
+    choice = input("What will you do? (1/2): ")
+
+    if choice == "1":
+        inspect_pod()
+    elif choice == "2":
+        dead('You yell out, "HELLO!"...\n'
+             'You manage to dislodge the item — but the noise masks something else.\n'
+             'You turn back to call out once more...\n'
+             '"HELL—"')
+    else:
+        print("Invalid Choice.")
+        find_item()
+
+def inspect_pod():
     pass
+
 
 def vent_space():
     print("\nYou manage to get into the vent space. You hear sounds in the room above, but can't see anything...")
