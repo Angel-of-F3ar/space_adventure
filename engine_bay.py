@@ -1,4 +1,4 @@
 import time
 
 def engine_bay():
-    pass
+    print("\nYou move towards the engine bay. Something creaks behind you...")

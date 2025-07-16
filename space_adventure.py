@@ -23,16 +23,6 @@ def intro():
         intro() # recursively call to retry input
 
 
-def engine_bay():
-    print("\nYou move towards the engine bay. Something creaks behind you...")
-
-
-
-
-
-
-
-
 #Start the game
 if __name__ == "__main__":
     intro()
