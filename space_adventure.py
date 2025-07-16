@@ -89,23 +89,41 @@ def look_to_hide():
     time.sleep(2)
     print("The noises are getting louder, whatever is out there is getting closer.")
     time.sleep(2)
-    print("You need to find somewher to hide, the noise is getting louder.")
+    print("You need to find somewhere to hide, the noise is getting louder.")
     time.sleep(1)
-    print("1. You see a vent on the floor. Hide in it?")
-    print("2. You can hide under the desk. Hide in it?")
-    print("3. You see a closet you could hide in. Hide in it?")
+    print("1. There's a floor vent — dark, narrow, but maybe safe.")
+    print("2. A metal desk with just enough clearance for your body.")
+    print("3. A half-open supply closet. You’d have to slam it shut.")
 
     choice = input("Where will you hide? (1/2/3): ")
 
     if choice == "1":
         vent_space()
     elif choice == "2":
-        dead()
+        dead("You hear something enter the room.\n" \
+        "It draws closer...\n" \
+        "Suddenly you feel something cold on your chest. You look down...\n" \
+        "You seem to be impaled by something, looks like a....")
     elif choice == "3":
-        dead()
+        dead("You slammed the closet shut.\n A monster rushes towards the closet, it looks like....!")
     else:
         print("Invalid Choice.")
         look_to_hide()
+
+def prepare():
+    pass
+
+def find_item():
+    pass
+
+def dead(reason="You died!"):
+    print(f"\n{reason}")
+    time.sleep(2)
+    print("GAME OVER")
+    time.sleep(1)
+    exit()
+
+
 
 #Start the game
 if __name__ == "__main__":
