@@ -1,5 +1,6 @@
 import time
 from escape_pod import escape_pod
+from control_room import control_room
 
 def intro():
     print("You wake up on a dark, cold spaceship. Lights flicker around you.")
@@ -20,8 +21,6 @@ def intro():
         print("Invalid choice Please try again.\n")
         intro() # recursively call to retry input
 
-def control_room():
-    print("\nYou stumble into the control room... it's eerily quiet.")
 
 def engine_bay():
     print("\nYou move towards the engine bay. Something creaks behind you...")

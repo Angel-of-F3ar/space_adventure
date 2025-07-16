@@ -1,6 +1,6 @@
 import time
 from game_tools import dead
-# from control_room import control_room
+from control_room import control_room
 # from engine_bay import engine_bay
 
 def escape_pod():
@@ -111,7 +111,7 @@ def prepare():
 
     if choice == "1":
         dead("You try to grab it!... but due to how fast your heart was racing you failed to notice how clammy your hands got...\n" \
-        "It sleps-\n" \
+        "It slips-\n" \
         "SKREEEEEE-")
     elif choice == "2":
         dead("Due to you indecisiveness, well... we all know what happens here. Trust your gut next time.")
