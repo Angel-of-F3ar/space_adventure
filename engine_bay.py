@@ -2,7 +2,7 @@ import time
 from captains_quarters import terminal_used
 from control_room import control_room
 from escape_pod import escape_pod
-from game_tools import dead, game_inventory, read_flight_log_25
+from game_tools import dead, game_inventory, read_flight_log_25,inspected_paper
 
 def engine_bay():
     global terminal_used
