@@ -2,6 +2,8 @@ import time
 from game_tools import dead, game_inventory, terminal_unlocked, read_flight_log_25
 from captains_logs import logs
 from flight_logs import flight_logs
+from control_room import control_room
+from engine_bay import engine_bay
 
 terminal_used = False
 
@@ -74,6 +76,32 @@ def terminal_accessed():
             break
         else:
             print("Invalid Choice.")
+
+#============ This part happens AFTER exiting the terminal ============
+    global terminal_used
+    terminal_used = True
+
+    print("\nYou step away from the terminal.")
+    time.sleep(2)
+
+    if "fob" not in game_inventory:
+        print("You glance at the bed... the fob is gone.")
+    else:
+         print("The room feels quieter now. Almost too quiet.")
+
+    time.sleep(3)
+    print("\nWhat now?")
+    print("1. Go to the control room.")
+    print("2. Head toward the engine bay.")
+
+    next_choice = input("Where will you go? (1/2/3): ")
+
+    if next_choice == "1":
+        control_room()
+    elif next_choice == "2":
+        engine_bay()
+    else:
+        print("Invalid choice.")
 
 
 def captains_logs():
