@@ -93,6 +93,8 @@ def look_around():
 
 
 def inspect_paper():
+    global inspected_paper
+
     print("\nYou unfold the crumpled piece of paper again, hands trembling slightly.")
     time.sleep(3)
     print("You flip it over... there's something scrawled on the back.")
@@ -107,6 +109,8 @@ def inspect_paper():
     time.sleep(3)
     print("The way out… it’s finally possible.")
     time.sleep(3)
+
+    inspected_paper = True
 
     if read_flight_log_25:
         print("You glance at the panel across the room. Time to reroute power — if you remember the steps.")
@@ -127,6 +131,8 @@ def inspect_paper():
         inspect_paper()
 
 def work_on_panel():
+    global inspected_paper  
+
     print("\nYou kneel before the access conduit panel E-14.")
     time.sleep(3)
     print("Wires hang loose, sparking softly. The diagnostics screen is dark but responsive.")
@@ -171,7 +177,7 @@ def work_on_panel():
         dead("You freeze, eyes locked on the thing that wears your husband's face.\n" \
              "It smiles — not kindly. You're too late.")
     elif choice == "2":
-        if "paper" in game_inventory:
+        if inspected_paper:
             print("\nYou sprint to the keypad, hands shaking as you enter the code...")
             time.sleep(2)
             print("6... 9... 5... 2... 0... 4")
@@ -188,3 +194,69 @@ def work_on_panel():
     else:
         print("Invalid choice.")
         work_on_panel()
+
+def final_room():
+    global inspected_paper
+
+    print("\nThe access panel blinks green. The door hisses open.")
+    time.sleep(3)
+    print("You stumble inside, sealing it shut behind you.")
+    time.sleep(3)
+    print("The hum of the engine core surrounds you... but it’s not the only sound.")
+    time.sleep(4)
+    print("Your breath catches in your throat.")
+    time.sleep(5)
+    print("“Why are you running from me?” it whispers, voice almost tender.")
+    time.sleep(5)
+
+    if "fob" not in game_inventory:
+        print("You reach for the console... but it won’t respond.")
+        time.sleep(3)
+        print("It needs the captain’s fob.")
+        time.sleep(3)
+        print("The creature gets in. You don’t even have time to scream.")
+        dead("Somewhere deep in the ship, the engines begin to die down... again.")
+        return
+
+    print("Your hand trembles as you hold up the captain’s fob.")
+    time.sleep(3)
+    print("The launch interface flickers to life.")
+    time.sleep(3)
+    print("Two coordinates are preloaded — Earth… and Sucaytre, the colony planet.")
+    time.sleep(4)
+    print("“Come home,” it says again, in his voice.")
+    time.sleep(3)
+    print("You make your choice.")
+
+    print("\n1. Set course for Earth.")
+    print("2. Set course for Sucaytre.")
+
+    choice = input("Where will you go? (1/2): ")
+
+    if choice == "1":
+        print("\nYou punch in Earth’s coordinates.")
+        time.sleep(3)
+        print("Engines roar to life. The ship jerks forward.")
+        time.sleep(3)
+        print("But something’s wrong. Systems blink. Warning lights flash red.")
+        time.sleep(3)
+        print("A hull breach — silent, invisible.")
+        time.sleep(4)
+        print("You never even see the stars again.")
+        dead("No one returns to Earth.")
+    elif choice == "2":
+        print("\nYou override the default and choose Sucaytre.")
+        time.sleep(3)
+        print("Engines whine, then stabilize.")
+        time.sleep(3)
+        print("The creature slams against the sealed glass behind you, snarling — no longer pretending.")
+        time.sleep(4)
+        print("You don’t look back.")
+        time.sleep(3)
+        print("Stars stretch into lines as you slip into jump speed...")
+        time.sleep(5)
+        print("\n\nTo be continued.")
+    else:
+        print("Invalid choice.")
+        final_room()
+
