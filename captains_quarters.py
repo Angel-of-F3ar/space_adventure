@@ -1,6 +1,7 @@
 import time
-from game_tools import dead, game_inventory
+from game_tools import dead, game_inventory, terminal_unlocked
 from captains_logs import logs
+
 
 def captains_quarters():
     print("\nYou enter the captains quartes.")
@@ -106,6 +107,7 @@ def sound_alarm():
     dead("Wait... isn't tha—")
 
 def access_granted():
+    global terminal_unlocked  # declare you're modifying the global variable
     read_logs = set()
 
     while True:
@@ -128,8 +130,15 @@ def access_granted():
             if choice == "Log 68" and len(read_logs) < 4:
                 print("You must read the other logs before accessing this one.")
             else:
-                print(f"\n{log[choice]}\n")
+                print(f"\n{logs[choice]}\n")
                 read_logs.add(choice)
                 time.sleep(2)
         else:
             print("Invalid Choice.")
+
+    # After loop ends, check if all logs were read
+    if "Log 68" in read_logs:
+        print("You've seen everything you needed...")
+        terminal_unlocked = True  # <- correctly updates the global flag
+    else:
+        terminal_unlocked = False
