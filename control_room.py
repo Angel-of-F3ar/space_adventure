@@ -1,16 +1,37 @@
 import time
-from game_tools import dead
+from game_tools import dead, game_inventory
 from engine_bay import engine_bay
 from escape_pod import escape_pod
-from captains_quarters import captains_quarters
+from captains_quarters import captains_quarters, terminal_used
+
 
 def control_room():
-    print("\nYou stumble into the control room... it's eerily quiet.")
-    time.sleep(2)
+    global terminal_used
+
+    if terminal_used:
+        print("\nYou return to the control room.")
+        time.sleep(3)
+
+        print("Something's... off.")
+        time.sleep(3)
+        print("The captain’s body is gone.")
+        time.sleep(3)
+
+        if "paper" not in game_inventory:
+            print("You notice a crumpled piece of paper under the terminal — the one you dropped earlier.")
+            time.sleep(3)
+            print("You pick it up and tuck it away.")
+            game_inventory.append("paper")
+        else:
+            print("Nothing else catches your attention.")
+        time.sleep(3)
+
+    print("\nYou stumble deeper into the room... it's eerily quiet.")
+    time.sleep(3)
     print("Dust clings to shattered monitors and rusted consoles.")
-    time.sleep(2)
+    time.sleep(3)
     print("You scan the room and freeze.")
-    time.sleep(2)
+    time.sleep(3)
     print("A figure sits slumped in the captain’s chair — motionless.")
     time.sleep(3)
     print("Wait... is that—CAPTAIN?!")
@@ -19,15 +40,22 @@ def control_room():
     print("1. Call out to the Captain")
     print("2. Walk up and turn the chair around")
 
+    if terminal_used:
+        print("3. Head to the Engine Bay.")
+
     choice = input("What do you do? (1/2): ")
 
     if choice == "1":
         call_out()
     elif choice == "2":
         walk_over()
+    elif choice == "3" and terminal_used:
+        engine_bay()
     else:
         print("Invalid choice.")
         control_room()
+
+
 
 
 def call_out():
