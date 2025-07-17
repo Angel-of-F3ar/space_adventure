@@ -311,7 +311,7 @@ def control_room():
         print("Wait... is that—CAPTAIN?!")
         time.sleep(4)
 
-    # Menu options (always shown)
+    
     print("1. Call out to the Captain")
     print("2. Walk up and turn the chair around")
     
@@ -1080,7 +1080,7 @@ def access_granted():
     # After loop ends, check if all logs were read
     if "Log 68" in read_logs:
         print("You've seen everything you needed...")
-        terminal_unlocked = True  # <- correctly updates the global flag
+        terminal_unlocked = True  
     else:
         terminal_unlocked = False
 
