@@ -1,5 +1,4 @@
 from game_tools import read_flight_log_25
-import time
 
 flight_logs = {
     "Flight Log 21": "Day 150: Adjusted trajectory by 0.0007 degrees to avoid micro-asteroid field. No course deviation recorded.",

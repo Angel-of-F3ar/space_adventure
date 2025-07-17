@@ -11,7 +11,6 @@ def control_room():
     if terminal_used:
         print("\nYou return to the control room.")
         time.sleep(3)
-
         print("Something's... off.")
         time.sleep(3)
         print("The captain’s body is gone.")
@@ -26,24 +25,26 @@ def control_room():
             print("Nothing else catches your attention.")
         time.sleep(3)
 
-    print("\nYou stumble deeper into the room... it's eerily quiet.")
-    time.sleep(3)
-    print("Dust clings to shattered monitors and rusted consoles.")
-    time.sleep(3)
-    print("You scan the room and freeze.")
-    time.sleep(3)
-    print("A figure sits slumped in the captain’s chair — motionless.")
-    time.sleep(3)
-    print("Wait... is that—CAPTAIN?!")
-    time.sleep(4)
+    else:
+        print("\nYou stumble deeper into the room... it's eerily quiet.")
+        time.sleep(3)
+        print("Dust clings to shattered monitors and rusted consoles.")
+        time.sleep(3)
+        print("You scan the room and freeze.")
+        time.sleep(3)
+        print("A figure sits slumped in the captain’s chair — motionless.")
+        time.sleep(3)
+        print("Wait... is that—CAPTAIN?!")
+        time.sleep(4)
 
+    # Menu options (always shown)
     print("1. Call out to the Captain")
     print("2. Walk up and turn the chair around")
-
+    
     if terminal_used:
-        print("3. Head to the Engine Bay.")
+        print("3. Head to the Engine Bay")
 
-    choice = input("What do you do? (1/2): ")
+    choice = input("What do you do? (1/2" + ("/3" if terminal_used else "") + "): ")
 
     if choice == "1":
         call_out()
@@ -54,6 +55,7 @@ def control_room():
     else:
         print("Invalid choice.")
         control_room()
+
 
 
 
