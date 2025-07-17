@@ -106,4 +106,30 @@ def sound_alarm():
     dead("Wait... isn't tha—")
 
 def access_granted():
-    pass
+    read_logs = set()
+
+    while True:
+        print("\n--- Captain's Logs ---")
+        for log_title in logs:
+            if log_title == "Log 68" and len(read_logs) < 4:
+                print(f"{log_title}: [LOCKED]")
+            elif log_title in read_logs:
+                print(f"{log_title} (READ)")
+            else:
+                print(log_title)
+
+        print("Type the log name (e.g., 'Log 64') to read it or type 'exit' to leave.")
+        choice = input("Your choice: ")
+
+        if choice.lower() == "exit":
+            print("Exiting logs...")
+            break
+        elif choice in logs:
+            if choice == "Log 68" and len(read_logs) < 4:
+                print("You must read the other logs before accessing this one.")
+            else:
+                print(f"\n{log[choice]}\n")
+                read_logs.add(choice)
+                time.sleep(2)
+        else:
+            print("Invalid Choice.")
