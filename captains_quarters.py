@@ -1,11 +1,24 @@
 import time
-from game_tools import dead, game_inventory, terminal_unlocked
+from game_tools import dead, game_inventory, terminal_unlocked, read_flight_log_25
 from captains_logs import logs
+from flight_logs import flight_logs
 
+terminal_used = False
 
 def captains_quarters():
+    global terminal_used
+
     print("\nYou enter the captains quartes.")
     time.sleep(5)
+
+    if terminal_used:
+        print("The terminal screen is dark now. Unresponsive.")
+        if "fob" not in game_inventory:
+            print("You glance at the bed... the fob is gone.")
+        else:
+            print("Nothing else left to do here.")
+        return
+
     print("It was unlocked?!")
     time.sleep(5)
     print("IT IS...")
@@ -55,7 +68,7 @@ def terminal_accessed():
         if choice == "1":
             captains_logs()
         elif choice == "2":
-            flight_logs()
+            flight_log_access()
         elif choice == "3":
             print("Logging out...")
             break
@@ -142,3 +155,30 @@ def access_granted():
         terminal_unlocked = True  # <- correctly updates the global flag
     else:
         terminal_unlocked = False
+
+
+def flight_log_access():
+    global read_flight_log_25
+    read_logs = set()
+
+    while True:
+        print("\n--- Flight Logs ---")
+        for log_title in flight_logs:
+            status = "(READ)" if log_title in read_logs else ""
+            print(f"{log_title} {status}")
+
+        print("Type the log name (e.g., 'Flight Log 21') to read it or type 'exit' to leave.")
+        choice = input("Your choice: ")
+
+        if choice.lower() == "exit":
+            print("You exit the flight logs.")
+            break
+        elif choice in flight_logs:
+            print(f"\n{flight_logs[choice]}\n")
+            read_logs.add(choice)
+            time.sleep(2)
+
+            if choice == "Flight Log 25":
+                read_flight_log_25 = True
+        else:
+            print("Invalid choice.")

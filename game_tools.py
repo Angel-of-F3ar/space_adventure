@@ -5,6 +5,8 @@ game_inventory = []
 
 terminal_unlocked = True
 
+read_flight_log_25 = False
+
 def dead(reason="You died!"):
     print(f"\n{reason}")
     time.sleep(2)
