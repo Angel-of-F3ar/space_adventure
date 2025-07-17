@@ -915,11 +915,12 @@ def captains_quarters():
 
     if terminal_used:
         print("The terminal screen is dark now. Unresponsive.")
-        if "fob" not in game_inventory:
-            print("You glance at the bed... the fob is gone.")
-        else:
-            print("Nothing else left to do here.")
-        return
+        time.sleep(2)
+        print("You glance around… something’s not right.")
+        time.sleep(3)
+        print("Wait… that wasn’t there before.")
+        time.sleep(3)
+        dead("You don't even have time to scream.\nWhatever was pretending to be the Captain was waiting for you to come back.")
 
     print("It was unlocked?!")
     time.sleep(5)
@@ -994,7 +995,7 @@ def terminal_accessed():
     print("1. Go to the control room.")
     print("2. Head toward the engine bay.")
 
-    next_choice = input("Where will you go? (1/2/3): ")
+    next_choice = input("Where will you go? (1/2): ")
 
     if next_choice == "1":
         control_room()
@@ -1024,14 +1025,14 @@ def captains_logs():
             else:
                 max_attempts -= 1
                 print(f"Incorrect. Attempts remaining: {max_attempts}")
+                if max_attempts == 0:
+                    sound_alarm()
         elif choice == "2":
             print("You step away from the terminal...")
             break
         else:
             print("Invalid choice.")
 
-    if max_attempts == 0:
-        sound_alarm()
 
 
 def sound_alarm():
