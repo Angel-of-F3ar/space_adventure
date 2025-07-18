@@ -21,10 +21,6 @@ cd space_adventure
 python space_adventure.py
 
 
-## Screenshot
-
-> _(You can add a terminal screenshot later if you want!)_
-
 ## License
 
 This project is open source under the [MIT License](https://opensource.org/licenses/MIT).
