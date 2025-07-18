@@ -17,11 +17,7 @@ https://github.com/Angel-of-F3ar/space_adventure.git
 2. Navigate into the project folder:
 cd space_adventure
 
-3. Create and activate a virtual environment:
-python3 -m venv venv
-source venv/bin/activate
-
-4. Run the game:
+3. Run the game:
 python space_adventure.py
 
 
